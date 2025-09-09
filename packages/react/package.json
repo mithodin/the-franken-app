@@ -34,5 +34,6 @@
       "import": "./dist/bundle.js",
       "default": "./dist/bundle.js"
     }
-  }
+  },
+  "types": "./dist/bundle.d.ts"
 }
