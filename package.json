@@ -4,6 +4,9 @@
   "workspaces": [
     "packages/*"
   ],
+  "scripts": {
+    "dev": "npm -w @tfa/react run build && npm -w @tfa/angular run start"
+  },
   "overrides": {
     "@tfa/react": {
       "vite": "7.1.4"
