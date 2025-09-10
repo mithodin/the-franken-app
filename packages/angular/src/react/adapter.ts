@@ -1,16 +1,13 @@
-import { Component, ElementRef, HostBinding, Inject, NgZone, OnChanges, OnDestroy, SimpleChanges } from '@angular/core';
+import { Component, ElementRef, HostBinding, NgZone, OnDestroy } from '@angular/core';
 import type { Adapter, WrapperProperties } from '@tfa/react'
-import { createInjectionToken } from 'src/app/shared/utils';
-
-const ADAPTER = createInjectionToken("react-adapter")
 
 @Component({ template: '' })
 export abstract class ReactAdapter<Props extends Record<string | number | symbol, unknown>> implements OnDestroy {
     @HostBinding('style.display') readonly display = 'contents';
 
+    protected abstract readonly reactAdapter: Adapter<Props>;
+
     constructor(
-        @Inject(ADAPTER)
-        protected readonly reactAdapter: Adapter<Props>,
         protected readonly elementRef: ElementRef,
         protected readonly zone: NgZone
     ) { }

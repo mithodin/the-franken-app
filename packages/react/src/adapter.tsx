@@ -1,5 +1,10 @@
 import { type Root, type Container, createRoot } from "react-dom/client";
-import { Wrapper, type WrapperProperties } from "./wrapper";
+import type { WrapperProperties } from "./wrapper.tsx";
+import { Wrapper } from "./wrapper.tsx";
+
+export {
+    type WrapperProperties
+}
 
 export interface Adapter<Props extends Record<string | number | symbol, unknown>> {
     render(container: Container, wrapperProps: WrapperProperties, props: Props): void;

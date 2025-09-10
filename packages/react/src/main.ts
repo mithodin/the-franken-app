@@ -1,6 +1,5 @@
 export { Hello } from "./components/hello"
-import type { Adapter, PropertiesOf } from "./adapter";
-import type { WrapperProperties } from "./wrapper";
+import type { Adapter, PropertiesOf, WrapperProperties } from "./adapter";
 
 export {
     type PropertiesOf,
