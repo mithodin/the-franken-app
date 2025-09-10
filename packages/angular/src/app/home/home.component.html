@@ -1,8 +1,6 @@
 <div class="banner" *ngIf="!isAuthenticated()">
   <h1 class="title">conduit</h1>
   <p class="description">A place to share your knowledge</p>
-  <hello *ngIf="showReactComponent()" name="Franz" />
-  <button (click)="showReactComponent.set(false)">no more react</button>
 </div>
 <div class="news-feed row" [style.marginTop]="!isAuthenticated() ? '232px' : ''">
   <div class="col-9">

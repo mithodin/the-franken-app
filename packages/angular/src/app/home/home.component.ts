@@ -13,9 +13,8 @@ import { ArticleListComponent } from '../shared/ui/article-list';
 import { PaginationComponent } from '../shared/ui/pagination';
 import { FEED_TYPE, FeedType, HomeStore } from './home.store';
 import { FeedToggleComponent } from './ui/feed-toggle/feed-toggle.component';
-import { TagsComponent } from './ui/tags/tags.component';
 import { Article } from '../shared/models';
-import { HelloComponent } from '../../react/hello.component';
+import { TagsComponent } from '../../react/tags.component';
 
 @Component({
   selector: 'app-home',
@@ -26,7 +25,6 @@ import { HelloComponent } from '../../react/hello.component';
     NgIf,
     ArticleListComponent,
     PaginationComponent,
-    HelloComponent
   ],
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.scss'],
@@ -40,8 +38,6 @@ export default class HomeComponent implements OnInit {
   readonly currentOffset = this.#homeStore.selectors.currentOffset;
   readonly isAuthenticated = this.#authStore.selectors.isAuthenticated;
   readonly articleList = this.#homeStore.selectors.articleList;
-
-  public readonly showReactComponent = signal(true)
 
   ngOnInit(): void {
     if (this.isAuthenticated()) {

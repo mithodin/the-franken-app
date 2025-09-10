@@ -1,8 +1,8 @@
-import { Component, ElementRef, HostBinding, NgZone, OnDestroy } from '@angular/core';
+import { Component, Directive, ElementRef, HostBinding, NgZone, OnDestroy } from '@angular/core';
 import type { Adapter, WrapperProperties } from '@tfa/react'
 
-@Component({ template: '' })
-export abstract class ReactAdapter<Props extends Record<string | number | symbol, unknown>> implements OnDestroy {
+@Directive()
+export abstract class ReactAdapter<Props extends Record<never, unknown>> implements OnDestroy {
     @HostBinding('style.display') readonly display = 'contents';
 
     protected abstract readonly reactAdapter: Adapter<Props>;

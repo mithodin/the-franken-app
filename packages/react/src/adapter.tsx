@@ -6,14 +6,14 @@ export {
     type WrapperProperties
 }
 
-export interface Adapter<Props extends Record<string | number | symbol, unknown>> {
+export interface Adapter<Props extends Record<never, unknown>> {
     render(container: Container, wrapperProps: WrapperProperties, props: Props): void;
     destroy(): void;
 }
 
 export type PropertiesOf<T> = T extends new (...args: unknown[]) => Adapter<infer Props> ? Props : Record<never, unknown>;
 
-export const getAdapter = <Props extends Record<string | number | symbol, unknown>>(Component: React.FC<Props>) => class implements Adapter<Props> {
+export const getAdapter = <Props extends Record<never, unknown>>(Component: React.FC<Props>) => class implements Adapter<Props> {
     #root: Root | undefined;
     #container: Container | undefined;
 

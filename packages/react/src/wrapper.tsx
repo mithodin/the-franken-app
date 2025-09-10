@@ -1,5 +1,9 @@
 import type { ReactNode } from "react";
+import { ThemeProvider } from "styled-components";
+import { AppTheme } from "./theme";
 
-export interface WrapperProperties { }
+export interface WrapperProperties {
+    theme: AppTheme
+}
 
-export const Wrapper = ({ children }: WrapperProperties & { children: ReactNode }) => <>{children}</>
+export const Wrapper = ({ children, theme }: WrapperProperties & { children: ReactNode }) => <ThemeProvider theme={theme}>{children}</ThemeProvider>
